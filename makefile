@@ -1,0 +1,3 @@
+run:
+	firefox index.html
+

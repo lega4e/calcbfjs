@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang=ru>
+<head>
+	<meta charset="utf-8">
+	<title> Булевы функции </title>
+	<link href='css/styles.css' rel=stylesheet>
+
+	<!-- MathJax -->
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+	<script src='js/parser.js'></script>
+	<script src='js/transform.js'></script>
+	<script src='js/algorithm.js'></script>
+	<script src='js/common.js'></script>
+	<script src='js/node.js'></script>
+	<script src='js/main.js'></script>
+</head>
+
+<body onload='document.getElementById("text-input").value = "x or y&z"; window.enter("x or y&z");'>
+	<h1> Операции над булевыми функциями </h1>
+
+	<p>
+		Этот калькулятор, выполняющий разные интересные штучки
+		над булевыми функциями из первого семестра
+		дискретной математики, написал один любознательный студент
+		Московского Политехнического Университета, услышав от
+		своего преподавателя, что неплохо было бы такой написать.
+	</p>
+
+	<p>
+		Чуть ниже приведена справка о том, как пользоваться
+		калькулятором.
+	</p>
+
+	<h3> Что умеет калькулятор </h3>
+	<ul>
+		<li> Строить таблицы истинности </li>
+		<li> Находить СДНФ </li>
+		<li> Находить СКНФ </li>
+		<li> Строить полином Жегалкина </li>
+	</ul>
+
+	<h3> Используйте! </h3>
+
+	<div>
+		<input id=text-input type="text" onkeydown="keypress(document.getElementById('text-input').value);">
+		<input id=okbut type=button onclick="enter(document.getElementById('text-input').value);" value='Enter'>
+	</div>
+
+	<div id="error"></div>
+
+	<div id="result"> </div>
+
+	<div style="padding-top: 50px;"></div>
+	<h3> Как пользоваться </h3>
+
+	<p> Например, так: </p>
+<pre class=callout>
+&gt; x or y
+&gt; x*y || z
+&gt; x -&gt; y&amp;z
+&gt; x |. y
+&gt; (x or y) and y'
+&gt; not (x or y) + 1
+</pre>
+	<p>
+		— вводим какое-нибудь выражение вроде вышеперечисленных,
+		а потом нажимаем Enter (или на кнопку, как хотите); в
+		начале выражения '&gt;' ставить, конечно, не надо.
+</p>
+
+	<p> О синтаксисе более подробно: </p>
+	<table id=syntable>
+		<tr>
+			<th> Символ </th>
+			<th> Значение </th>
+			<th> Пример </th>
+		</tr>
+		<tr>
+			<td> [a-zA-Z_]\w* </td>
+			<td> Имя переменной </td>
+			<td> x, y, a, b, var, value </td>
+		</tr>
+		<tr>
+			<td> 0 </td>
+			<td> Константа 0 </td>
+			<td> 0 </td>
+		</tr>
+		<tr>
+			<td> 1 </td>
+			<td> Константа 1 </td>
+			<td> 1 </td>
+		</tr>
+		<tr>
+			<td> not, !, ' </td>
+			<td> Отрицание </td>
+			<td> not x, !x, x' </td>
+		</tr>
+		<tr>
+			<td> or, || </td>
+			<td> Дизъюнкция </td>
+			<td> x or y, x || y </td>
+		</tr>
+		<tr>
+			<td> and, *, &amp;, &amp;&amp;, ^ </td>
+			<td> Конъюнкция </td>
+			<td> x and y, x*y, x&amp;y x &amp;&amp; y, x^y </td>
+		</tr>
+		<tr>
+			<td> imp, -&gt; </td>
+			<td> Импликация </td>
+			<td> x imp y, x -&gt; y</td>
+		</tr>
+		<tr>
+			<td> ~ </td>
+			<td> Эквиваленция </td>
+			<td> x ~ y</td>
+		</tr>
+		<tr>
+			<td> add, + </td>
+			<td> Сложение по Жегалкину </td>
+			<td> x add y, x + y </td>
+		</tr>
+		<tr>
+			<td> |. </td>
+			<td> Стрелка Пирса </td>
+			<td> x |. y </td>
+		</tr>
+		<tr>
+			<td> | </td>
+			<td> Штрих Шеффера </td>
+			<td> x | y </td>
+		</tr>
+	</table>
+
+	<p> Приоритет операций: </p>
+
+	<div>
+		<ol>
+			<li> Отрицание </li>
+			<li> И </li>
+			<li> Или </li>
+			<li> Все остальные имеют равный приоритет </li>
+		</ol>
+	</div>
+
+	<div style='font-size: 0.8em; color: grey;'>
+		 <p>
+		 	Продукт распространяется на условиях лицензии CC-BY.
+			Продукт был разработан Новиковым Денисом Игоревичем,
+			студентом МПУ из группы 201-363, для Московского Политеха
+			по заказу Муханова Сергея Александровича.
+		 </p>
+	</div>
+
+
+	
+</body>
+</html>
+
+<!-- 
+	Продукт распространяется на условиях лицензии CC-BY.
+
+	Продукт был разработан Новиковым Денисом Игоревичем,
+	студентом МПУ из группы 201-363, для Московского Политеха
+	по заказу Муханова Сергея Александровича.
+-->

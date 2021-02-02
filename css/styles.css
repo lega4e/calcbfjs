@@ -1,0 +1,126 @@
+
+@font-face
+{
+	font-family: 'mandy';
+	src: url('../resources/mandy.otf');
+}
+
+
+
+html
+{
+	background: #C9C9C9;
+	font-family: 'mandy';
+	font-size: 14pt;
+	hyphens: auto;
+}
+
+body
+{
+	max-width: 750px;
+	min-height: 300px;
+
+	margin: auto;
+	margin-top: 100px;
+	margin-bottom: 300px;
+
+	border: 50px solid transparent;
+	border-radius: 30px;
+
+	background: white;
+}
+
+table
+{
+	border-collapse: collapse;
+}
+
+table td
+{
+	border: 1px solid black;
+	padding: 10px;
+}
+
+#syntable
+{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	font-family: 'courier new';
+	font-size: 12pt;
+}
+
+#error
+{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color: #971515;
+	font-weight: bold;
+}
+
+#restable
+{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border-collapse: collapse;
+}
+
+#restable td
+{
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+.formula
+{
+	font-size: 0.9em;
+}
+
+
+
+h1 { border-bottom: 1px solid gray; }
+
+p { text-align: justify; }
+
+a { color: #05081E; }
+a:hover { color: #1B256C; }
+
+
+
+
+.callout
+{
+	border: 20px solid transparent;
+	border-radius: 20px;
+	background: #0000000f;
+
+	font-family: 'courier new';
+	font-size: 12pt;
+}
+
+#text-input
+{
+	width: 300px;
+	height: 35px;
+
+	font-family: 'courier new';
+	font-size: 10pt;
+}
+
+#okbut
+{
+	height: 33px;;
+}
+
+
+
+
+
+/* END */
+
+/*
+ * Продукт распространяется на условиях лицензии CC-BY.
+ * 
+ * Продукт был разработан Новиковым Денисом Игоревичем,
+ * студентом МПУ из группы 201-363, для Московского Политеха
+ * по заказу Муханова Сергея Александровича.
+ */
